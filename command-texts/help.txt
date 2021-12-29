@@ -1,0 +1,2 @@
+!help - gives the list of commands available to the user
+!hello - hello world bruh
