@@ -18,6 +18,7 @@ async def on_message(message):
 
 	if message.content.startswith('!hello'):
 		await message.channel.send('Hello World!')
+		print('Message sent | Hello World')
 
 	if message.content.startswith('!help'):
 		file = open('command-texts/help.txt', 'r')
@@ -25,11 +26,13 @@ async def on_message(message):
 		print(msg)
 		await message.channel.send(msg)
 		file.close()
+		print('Help command succesfully executed')
 
 	if message.content.startswith('!facts'):
 		file = open('command-texts/facts.txt', 'r')
 		msg = file.read()
 		await message.channel.send(msg)
 		file.close()
+		print('Amazing fact shared')
 
 client.run(os.getenv('DKEY'))
