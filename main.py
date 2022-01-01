@@ -1,6 +1,7 @@
 # importing all the libraries
 import discord
 import os
+import calendar as ca
 
 client = discord.Client()
 
@@ -35,4 +36,24 @@ async def on_message(message):
 		file.close()
 		print('Amazing fact shared')
 
+	if message.content.startswith('!invite'):
+		await message.channel.send('https://discord.gg/yhjbXcd4')
+		print('Invite link sent successfully')
+
+	if message.content.startswith('!admin'):
+		file = open('command-texts/admin.txt', 'r')
+		msg = file.read()
+		await message.channel.send(msg)
+		file.close()
+		print('Admin link sent successfully')
+
+	if message.content.startswith('!time'):
+		await message.channel.send(ca.SendTime)
+		print('Current time:', ca.SendTime)
+
+	if message.content.startswith('!date'):
+		await message.channel.send(ca.SendDate)
+		print('Current date:', ca.SendDate)
+
+# save the discord api key in the env variables as DKEY
 client.run(os.getenv('DKEY'))
