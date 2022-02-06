@@ -1,7 +1,7 @@
 # importing all the libraries
 import discord
 import os
-import calendar as ca
+# import calendar as ca
 
 client = discord.Client()
 
@@ -9,6 +9,7 @@ client = discord.Client()
 @client.event
 async def on_ready():
 	print('We have loged in as {0.user}'.format(client))
+
 
 # the chatbot part
 @client.event
