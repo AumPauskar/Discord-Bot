@@ -2,6 +2,7 @@
 import discord
 import os
 import calendar as ca
+import dictionary
 
 client = discord.Client()
 
@@ -49,12 +50,19 @@ async def on_message(message):
 		print('Admin link sent successfully')
 
 	if message.content.startswith('!time'):
-		await message.channel.send(ca.SendTime)
-		print('Current time:', ca.SendTime)
+		tmp = ca.SendTime
+		await message.channel.send(tmp)
+		print('Current time:', tmp)
 
 	if message.content.startswith('!date'):
-		await message.channel.send(ca.SendDate)
-		print('Current date:', ca.SendDate)
+		tmp = ca.SendDate
+		await message.channel.send(tmp)
+		print('Current date:', tmp)
+
+	if message.content.startswith('!word'):
+		tmp = dictionary.Word
+		await message.channel.send(tmp)
+		print('Sent word:', tmp)
 
 # save the discord api key in the env variables as DKEY
 client.run(os.getenv('DKEY'))
