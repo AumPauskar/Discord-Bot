@@ -1,7 +1,10 @@
-!help - gives the list of commands available to the user
-!hello - hello world bruh
-!facts - gives a FACCT
-!invite - spits out an invite link
-!admin - gives away the admin handle
-!time - gives the time
-!date - gives the date
+1. !help: gives the list of commands available to the user
+2. !hello: hello world bruh
+3. !facts: gives a FACCT
+4. !invite: spits out an invite link
+5. !admin: gives away the admin handle
+6. !time: gives the time
+7. !date: gives the date
+8. !word: gives a random word from a dictionary
+9. !sentence: makes a sentence out of the random words
+10.!long sentence:	makes a sentence just longer
