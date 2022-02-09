@@ -1,7 +1,7 @@
 import time
 def SendTime():
-	curtime = time.strftime('%H') + ':' +time.strftime('%M') + ':' + time.strftime('%S')
+	curtime = str(time.strftime('%H : %M : %S'))
 	return curtime
 def SendDate():
-	curdate = time.strftime('%d') + '/' + time.strftime('%m') + '/' + time.strftime('%y')
+	curdate = str(time.strftime('%y / %m / %d'))
 	return curdate
