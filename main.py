@@ -50,19 +50,29 @@ async def on_message(message):
 		print('Admin link sent successfully')
 
 	if message.content.startswith('!time'):
-		tmp = ca.SendTime
+		tmp = ca.SendTime()
 		await message.channel.send(tmp)
 		print('Current time:', tmp)
 
 	if message.content.startswith('!date'):
-		tmp = ca.SendDate
+		tmp = ca.SendDate()
 		await message.channel.send(tmp)
 		print('Current date:', tmp)
 
 	if message.content.startswith('!word'):
-		tmp = dictionary.Word
+		tmp = dictionary.Word()
 		await message.channel.send(tmp)
 		print('Sent word:', tmp)
+
+	if message.content.startswith('!sentence'):
+		tmp = dictionary.Sentence()
+		await message.channel.send(tmp)
+		print('Sent sentence:', tmp)
+
+	if message.content.startswith('!longsentence'):
+		tmp = dictionary.LongSentence()
+		await message.channel.send(tmp)
+		print('Sent long sentence:', tmp)
 
 # save the discord api key in the env variables as DKEY
 client.run(os.getenv('DKEY'))
