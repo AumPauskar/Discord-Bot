@@ -1,8 +1,9 @@
 # importing all the libraries
 import discord
 import os
-import calendar as ca
+import cal as ca
 import dictionary
+import weather_plugin
 
 client = discord.Client()
 
@@ -73,6 +74,11 @@ async def on_message(message):
 		tmp = dictionary.LongSentence()
 		await message.channel.send(tmp)
 		print('Sent long sentence:', tmp)
+
+	if message.content.startswith('!weather'):
+		tmp = weather_plugin.SendMessage()
+		await message.channel.send(tmp)
+		print('Sent weather:', tmp)
 
 # save the discord api key in the env variables as DKEY
 client.run(os.getenv('DKEY'))
