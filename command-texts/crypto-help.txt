@@ -1,0 +1,4 @@
+1. $btc: sends current bitcoin value
+2. $eth: sends current etherium value
+3. $xmr: sends current monero value
+4. $doge: sends current dogecoin value
