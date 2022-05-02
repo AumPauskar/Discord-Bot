@@ -4,6 +4,7 @@ import os
 import cal as ca
 import dictionary
 import weather_plugin
+import crypto_plugin as crypto
 
 client = discord.Client()
 
@@ -79,6 +80,34 @@ async def on_message(message):
 		tmp = weather_plugin.SendMessage()
 		await message.channel.send(tmp)
 		print('Sent weather:', tmp)
+
+	if message.content.startswith('$help'):
+		file = open('command-texts/crypto-help.txt', 'r')
+		msg = file.read()
+		print(msg)
+		await message.channel.send(msg)
+		file.close()
+		print('Crypto help command succesfully executed')
+
+	if message.content.startswith('$btc'):
+		tmp = crypto.sendbtc()
+		await message.channel.send(tmp)
+		print('Sent digital assets(btc):', tmp)
+
+	if message.content.startswith('$eth'):
+		tmp = crypto.sendeth()
+		await message.channel.send(tmp)
+		print('Sent digital assets(eth):', tmp)
+
+	if message.content.startswith('$xmr'):
+		tmp = crypto.sendxmr()
+		await message.channel.send(tmp)
+		print('Sent digital assets(xmr/monero):', tmp)
+
+	if message.content.startswith('$doge'):
+		tmp = crypto.senddoge()
+		await message.channel.send(tmp)
+		print('Sent digital assets(doge):', tmp)
 
 # save the discord api key in the env variables as DKEY
 client.run(os.getenv('DKEY'))

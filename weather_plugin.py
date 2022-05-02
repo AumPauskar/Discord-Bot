@@ -1,9 +1,9 @@
-def SendMessage():
-	import requests
-	import os
-	import time
-	import csv
+import requests
+import os
+import time
+import csv
 
+def SendMessage():
 	city_name = 'Belgaum'
 	api_key = os.environ.get('W_API')
 	api_link = "http://api.openweathermap.org/data/2.5/weather?q="+city_name+"&appid="+api_key
@@ -23,6 +23,3 @@ def SendMessage():
 		values = 'Currently weather in Belgaum is:' + str(round(temp)) +' C' + ', ' + weather_description + ', ' + 'Humidity levels at: ' +str(humidity) +'%'
 
 	return values
-
-
-print(SendMessage())
