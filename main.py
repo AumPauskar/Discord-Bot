@@ -5,6 +5,7 @@ import cal as ca
 import dictionary
 import weather_plugin
 import crypto_plugin as crypto
+import f1_events_plugin
 
 client = discord.Client()
 
@@ -80,6 +81,11 @@ async def on_message(message):
 		tmp = weather_plugin.SendMessage()
 		await message.channel.send(tmp)
 		print('Sent weather:', tmp)
+
+	if message.content.startswith('!f1 event'):
+		tmp = f1_events_plugin.f1_schedule()
+		await message.channel.send(tmp)
+		print('Sent next race\n', tmp)
 
 	if message.content.startswith('$help'):
 		file = open('command-texts/crypto-help.txt', 'r')
