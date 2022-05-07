@@ -6,6 +6,8 @@ import dictionary
 import weather_plugin
 import crypto_plugin as crypto
 import f1_events_plugin
+import f1_stnading
+import f1_standings_send
 
 client = discord.Client()
 
@@ -72,7 +74,7 @@ async def on_message(message):
 		await message.channel.send(tmp)
 		print('Sent sentence:', tmp)
 
-	if message.content.startswith('!longsentence'):
+	if message.content.startswith('!long sentence'):
 		tmp = dictionary.LongSentence()
 		await message.channel.send(tmp)
 		print('Sent long sentence:', tmp)
@@ -86,6 +88,16 @@ async def on_message(message):
 		tmp = f1_events_plugin.f1_schedule()
 		await message.channel.send(tmp)
 		print('Sent next race\n', tmp)
+
+	if message.content.startswith('!update-f1'):
+		tmp = f1_stnading.f1_webscraper()
+		await message.channel.send(tmp)
+		print('Admin action successfully completed:', tmp)
+
+	if message.content.startswith('!f1 standings'):
+		tmp = f1_standings_send.f1_send()
+		await message.channel.send(tmp)
+		print('Standings sent \n', tmp)
 
 	if message.content.startswith('$help'):
 		file = open('command-texts/crypto-help.txt', 'r')

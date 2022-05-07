@@ -9,4 +9,6 @@
 9. !sentence: makes a sentence out of the random words
 10.!long sentence:	makes a sentence just longer
 11.!weather: shows the weather in belgaum
-12.$help: shows the help in digital assets commands
+12.!f1 event: shows the next f1 event in 2022
+13.!f1 standings: shows the f1 standings 
+14.$help: shows the help in digital assets commands
